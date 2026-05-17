@@ -28,7 +28,12 @@ import { experiences } from "../data/experience";
           </div>
 
           <!-- Timeline -->
-          <div class="relative border-l border-gray-800 ml-3 space-y-10">
+          <div class="relative ml-3 space-y-10">
+
+            <!-- Better Timeline Line -->
+            <div
+              class="absolute left-0 top-0 bottom-0 w-px bg-gray-800"
+            ></div>
 
             {
               experience.roles.map((role) => (
@@ -36,7 +41,7 @@ import { experiences } from "../data/experience";
 
                   <!-- Timeline Dot -->
                   <div
-                    class="absolute -left-[9px] top-3 w-4 h-4 rounded-full bg-white"
+                    class="absolute -left-[7px] top-3 w-4 h-4 rounded-full bg-white border-4 border-black"
                   ></div>
 
                   <!-- Expandable Card -->
