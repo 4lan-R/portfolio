@@ -5,11 +5,11 @@ export const contact = {
   socials: [
     {
       name: "LinkedIn",
-      link: "https://linkedin.com/",
+      link: "https://www.linkedin.com/in/alan-remanan",
     },
     {
         name: "Instagram",
-        link: "https://instagram.com/4lan_R",
+        link: "https://www.instagram.com/4lan____",
     }
   ],
 };
