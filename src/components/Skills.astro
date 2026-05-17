@@ -1,21 +1,47 @@
 ---
 import { skills } from "../data/skills";
+import { Icon } from "astro-icon/components";
 ---
 
-<section id="skills" class="max-w-5xl mx-auto px-6 py-32">
+<section id="skills" class="max-w-6xl mx-auto px-6 py-32">
 
-  <h2 class="text-4xl font-bold mb-10">
+  <h2 class="text-4xl font-bold mb-14">
     Skills
   </h2>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="space-y-12">
 
     {
-      skills.map((skill) => (
-        <div
-          class="border border-gray-800 rounded-xl p-4 transition hover:border-gray-600 hover:-translate-y-1"
-        >
-          {skill}
+      skills.map((group) => (
+        <div>
+
+          <h3 class="text-xl font-semibold text-gray-400 mb-6">
+            {group.category}
+          </h3>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+            {
+              group.items.map((skill) => (
+                <div
+                  class="border border-gray-800 rounded-2xl p-4 flex items-center gap-3 transition duration-300 hover:border-gray-600 hover:-translate-y-1"
+                >
+
+                  <Icon
+                    name={skill.icon}
+                    class="w-6 h-6"
+                  />
+
+                  <span>
+                    {skill.name}
+                  </span>
+
+                </div>
+              ))
+            }
+
+          </div>
+
         </div>
       ))
     }
