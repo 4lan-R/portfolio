@@ -1,30 +1,48 @@
-<section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-  <h1 class="text-6xl font-bold mb-4">
-    Alan
+---
+import { hero } from "../data/hero";
+---
+
+<section
+  class="min-h-screen flex flex-col items-center justify-center text-center px-6"
+>
+
+  <h1 class="text-5xl md:text-7xl font-bold mb-4">
+    {hero.name}
   </h1>
 
   <p class="text-2xl text-gray-400 mb-6">
-    AI Engineer & Backend Developer
+    {hero.title}
   </p>
 
   <p class="max-w-2xl text-lg text-gray-500">
-    Building AI-powered backend systems using FastAPI, Python, and Generative AI.
+    {hero.description}
   </p>
 
-  <div class="mt-8 flex gap-4">
+  <div class="mt-8 flex flex-wrap justify-center gap-4">
+
     <a
       href="#projects"
-      class="bg-white text-black px-6 py-3 rounded-lg font-medium"
+      class="bg-white text-black px-6 py-3 rounded-lg font-medium transition hover:scale-105"
     >
       View Projects
     </a>
 
     <a
-      href="https://github.com/"
+      href={hero.github}
       target="_blank"
-      class="border border-gray-600 px-6 py-3 rounded-lg"
+      class="border border-gray-600 px-6 py-3 rounded-lg transition hover:border-gray-400"
     >
       GitHub
     </a>
+
+    <a
+      href={hero.resume}
+      target="_blank"
+      class="border border-gray-600 px-6 py-3 rounded-lg transition hover:border-gray-400"
+    >
+      Resume
+    </a>
+
   </div>
+
 </section>
