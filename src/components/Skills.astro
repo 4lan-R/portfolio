@@ -3,49 +3,31 @@ import { skills } from "../data/skills";
 import { Icon } from "astro-icon/components";
 ---
 
-<section id="skills" class="max-w-6xl mx-auto px-6 py-32">
-
-  <h2 class="text-4xl font-bold mb-14">
+<section id="skills" class="mx-auto max-w-6xl px-6 py-24">
+  <h2 class="mb-12 text-4xl font-black uppercase tracking-tight">
     Skills
   </h2>
 
-  <div class="space-y-12">
-
+  <div class="space-y-10">
     {
       skills.map((group) => (
         <div>
-
-          <h3 class="text-xl font-semibold text-gray-400 mb-6">
+          <h3 class="mb-5 text-xl font-black uppercase tracking-[0.2em] text-black/70">
             {group.category}
           </h3>
 
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {
               group.items.map((skill) => (
-                <div
-                  class="border border-gray-800 rounded-2xl p-4 flex items-center gap-3 transition duration-300 hover:border-gray-600 hover:-translate-y-1"
-                >
-
-                  <Icon
-                    name={skill.icon}
-                    class="w-6 h-6"
-                  />
-
-                  <span>
-                    {skill.name}
-                  </span>
-
+                <div class="brutalist-card flex items-center gap-3 bg-white p-4">
+                  <Icon name={skill.icon} class="h-6 w-6" />
+                  <span class="font-semibold">{skill.name}</span>
                 </div>
               ))
             }
-
           </div>
-
         </div>
       ))
     }
-
   </div>
-
 </section>

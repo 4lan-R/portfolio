@@ -2,104 +2,31 @@
 import { contact } from "../data/contact";
 ---
 
-<section
-  id="contact"
-  class="max-w-4xl mx-auto px-6 py-32 text-center"
->
+<section id="contact" class="mx-auto max-w-4xl px-6 py-24 text-center">
+  <div class="brutalist-card brutalist-card--accent p-8 md:p-10">
+    <h2 class="mb-6 text-4xl font-black uppercase tracking-tight">
+      Contact
+    </h2>
 
-  <h2 class="text-4xl font-bold mb-6">
-    Contact
-  </h2>
+    <p class="mb-8 text-lg text-black/80">
+      Whether it's building AI-powered products, designing agent-based systems, or
+      delivering robust Python backends, I bring strong ownership, problem-solving,
+      and a passion for innovation. Let's connect and collaborate!
+    </p>
 
-  <p class="text-gray-400 text-lg mb-10">
-    Whether it's building AI-powered products, designing agent-based systems, or delivering robust Python backends, I bring strong ownership, problem-solving, and a passion for innovation. Let's connect and collaborate! 
-  </p>
-
-  <!-- Icons -->
-  <div class="flex justify-center gap-6">
-
-    <!-- Mail -->
-    <a
-      href={`mailto:${contact.email}`}
-      class="text-gray-400 hover:text-white transition"
-      aria-label="Email"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-        />
-      </svg>
-    </a>
-
-    <!-- Phone -->
-    <a
-      href={`tel:${contact.mobile}`}
-      class="text-gray-400 hover:text-white transition"
-      aria-label="Phone"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3 5a2 2 0 012-2h3.28a2 2 0 011.94 1.515l.57 2.28a2 2 0 01-.45 1.91l-1.27 1.27a16 16 0 006.36 6.36l1.27-1.27a2 2 0 011.91-.45l2.28.57A2 2 0 0119 15.72V19a2 2 0 01-2 2h-1C8.82 21 3 15.18 3 8V5z"
-        />
-      </svg>
-    </a>
-
-    <!-- LinkedIn -->
-    <a
-      href="https://www.linkedin.com/in/alan-remanan"
-      target="_blank"
-      class="text-gray-400 hover:text-white transition"
-      aria-label="LinkedIn"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-6 h-6"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.53-1 1.84-2.2 3.8-2.2 4.07 0 4.82 2.68 4.82 6.16V24h-4v-7.1c0-1.7-.03-3.88-2.36-3.88-2.36 0-2.72 1.85-2.72 3.76V24h-4V8z"
-        />
-      </svg>
-    </a>
-
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/4lan____"
-      target="_blank"
-      class="text-gray-400 hover:text-white transition"
-      aria-label="Instagram"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-6 h-6"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.32 4 20 5.68 20 7.75v8.5C20 18.32 18.32 20 16.25 20h-8.5C5.68 20 4 18.32 4 16.25v-8.5C4 5.68 5.68 4 7.75 4zm8.75 1a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"
-        />
-      </svg>
-    </a>
-
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href={`mailto:${contact.email}`} class="brutalist-btn bg-[#ff6b35] px-5 py-3 text-black" aria-label="Email">
+        Email
+      </a>
+      <a href={`tel:${contact.mobile}`} class="brutalist-btn bg-white px-5 py-3 text-black" aria-label="Phone">
+        Call
+      </a>
+      <a href="https://www.linkedin.com/in/alan-remanan" target="_blank" class="brutalist-btn bg-[#3b82f6] px-5 py-3 text-white" aria-label="LinkedIn">
+        LinkedIn
+      </a>
+      <a href="https://www.instagram.com/4lan____" target="_blank" class="brutalist-btn bg-[#111111] px-5 py-3 text-white" aria-label="Instagram">
+        Instagram
+      </a>
+    </div>
   </div>
-
 </section>

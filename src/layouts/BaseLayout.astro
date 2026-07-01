@@ -15,28 +15,32 @@ const { title, description } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#home">Portfolio</a>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+    <header class="sticky top-0 z-50 border-b-4 border-black bg-[#f9e34b]">
+      <div class="container flex items-center justify-between py-4">
+        <a class="text-xl font-black uppercase tracking-[0.2em]" href="#home">AR</a>
+        <nav class="flex flex-wrap items-center gap-3 text-sm font-semibold uppercase md:gap-5">
+          <a class="brutalist-link" href="#about">About</a>
+          <a class="brutalist-link" href="#skills">Skills</a>
+          <a class="brutalist-link" href="#experience">Experience</a>
+          <a class="brutalist-link" href="#projects">Projects</a>
+          <a class="brutalist-link" href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
     <main>{Astro.slots.default}</main>
 
-    <footer class="site-footer">
+    <footer class="border-t-4 border-black bg-[#111111] py-8 text-white">
       <div class="container">
-        <p>Built with Astro · © {new Date().getFullYear()} Your Name</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em]">
+          Built with Astro · © {new Date().getFullYear()} Alan Remanan
+        </p>
       </div>
     </footer>
   </body>

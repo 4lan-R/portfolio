@@ -1,13 +1,92 @@
 @import "tailwindcss";
 
+:root {
+  --bg: #f4efe6;
+  --surface: #fff8dc;
+  --ink: #111111;
+  --accent: #ff6b35;
+  --accent-2: #3b82f6;
+  --border: #111111;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background:
-    radial-gradient(circle at top, #111827 0%, #020617 45%);
-    
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1.55;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--accent);
   color: white;
-  font-family: 'Inter', sans-serif;
+}
+
+section {
+  position: relative;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.brutalist-card {
+  background: white;
+  border: 3px solid var(--border);
+  box-shadow: 8px 8px 0 var(--border);
+}
+
+.brutalist-card--accent {
+  background: var(--surface);
+}
+
+.brutalist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 var(--border);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brutalist-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--border);
+}
+
+.brutalist-link {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.brutalist-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.brutalist-link:hover::after {
+  transform: scaleX(1);
 }
