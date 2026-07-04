@@ -2,47 +2,35 @@
 import { hero } from "../data/hero";
 ---
 
-<section
-  class="min-h-screen flex flex-col items-center justify-center text-center px-6"
->
+<section id="home" class="section-shell grid min-h-screen items-center gap-10 pt-24 lg:grid-cols-[1.05fr_0.95fr]">
+  <div>
+    <div class="hero-badge">AI Engineer • Backend Systems • Agentic Workflows</div>
+    <h1 class="hero-title">
+      Building <span class="accent">Intelligent Software.</span>
+    </h1>
+    <div class="hero-typing">{hero.title}</div>
+    <p class="hero-copy">{hero.description}</p>
 
-  <h1 class="text-5xl md:text-7xl font-bold mb-4">
-    {hero.name}
-  </h1>
-
-  <p class="text-2xl text-gray-400 mb-6">
-    {hero.title}
-  </p>
-
-  <p class="max-w-2xl text-lg text-gray-500">
-    {hero.description}
-  </p>
-
-  <div class="mt-8 flex flex-wrap justify-center gap-4">
-
-    <a
-      href="#projects"
-      class="bg-white text-black px-6 py-3 rounded-lg font-medium transition hover:scale-105"
-    >
-      View Projects
-    </a>
-
-    <a
-      href={hero.github}
-      target="_blank"
-      class="border border-gray-600 px-6 py-3 rounded-lg transition hover:border-gray-400"
-    >
-      GitHub
-    </a>
-
-    <a
-      href={hero.resume}
-      target="_blank"
-      class="border border-gray-600 px-6 py-3 rounded-lg transition hover:border-gray-400"
-    >
-      Resume
-    </a>
-
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="#projects" class="hero-cta">Explore Work</a>
+      <a href={hero.github} target="_blank" class="hero-cta secondary">GitHub</a>
+      <a href={hero.resume} target="_blank" class="hero-cta secondary">Resume</a>
+    </div>
   </div>
 
+  <div class="hero-visual">
+    <img src="/hero-scene.jpg" alt="Developer working on a futuristic laptop setup" />
+    <div class="hero-panel one">
+      <strong>AI Agents</strong>
+      <span>Multi-step orchestration</span>
+    </div>
+    <div class="hero-panel two">
+      <strong>Neural Flow</strong>
+      <span>LangGraph & orchestration</span>
+    </div>
+    <div class="hero-panel three">
+      <strong>Terminal Output</strong>
+      <span>FastAPI / Python / APIs</span>
+    </div>
+  </div>
 </section>
