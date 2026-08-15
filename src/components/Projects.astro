@@ -3,29 +3,29 @@ import { projects } from "../data/projects";
 ---
 
 <section id="projects" class="mx-auto max-w-5xl px-6 py-24">
-  <h2 class="mb-12 text-4xl font-black uppercase tracking-tight">
+  <h2 class="mb-8 text-3xl font-extrabold">
     Projects
   </h2>
 
   <div class="grid gap-8 md:grid-cols-2">
     {
       projects.map((project) => (
-        <div class="brutalist-card bg-white p-6">
-          <h3 class="mb-4 text-2xl font-black uppercase">
+        <div class="card p-6">
+          <h3 class="mb-3 text-2xl font-bold">
             {project.title}
           </h3>
 
-          <p class="mb-6 text-black/80">{project.description}</p>
+          <p class="mb-4 text-muted">{project.description}</p>
 
-          <div class="mb-6 flex flex-wrap gap-2">
+          <div class="mb-4 flex flex-wrap gap-2">
             {project.tech.map((tech) => (
-              <span class="border-2 border-black bg-[#f9e34b] px-3 py-1 text-sm font-semibold uppercase">
+              <span class="tag">
                 {tech}
               </span>
             ))}
           </div>
 
-          <a href={project.github} target="_blank" class="brutalist-link text-black">
+          <a href={project.github} target="_blank" class="nav-link">
             View Project
           </a>
         </div>

@@ -3,33 +3,33 @@ import { hero } from "../data/hero";
 ---
 
 <section id="home" class="flex min-h-screen items-center justify-center px-6 py-24">
-  <div class="w-full max-w-5xl border-4 border-black bg-[#fff8dc] p-8 shadow-[10px_10px_0_#111] md:p-12">
-    <p class="mb-4 inline-block border-2 border-black bg-[#ff6b35] px-3 py-1 text-sm font-semibold uppercase tracking-[0.25em] text-black">
-      Software Engineer • Builder
+  <div class="w-full max-w-5xl card p-10 md:p-16">
+    <p class="mb-4 inline-block badge">
+      Software Engineer
     </p>
 
-    <h1 class="mb-4 text-5xl font-black uppercase leading-none md:text-7xl">
+    <h1 class="mb-4 text-5xl font-extrabold leading-tight md:text-6xl">
       {hero.name}
     </h1>
 
-    <p class="mb-6 text-2xl font-semibold text-black">
+    <p class="mb-6 text-2xl font-semibold text-muted">
       {hero.title}
     </p>
 
-    <p class="max-w-2xl text-lg text-black/80">
+    <p class="max-w-2xl text-lg text-muted">
       {hero.description}
     </p>
 
     <div class="mt-8 flex flex-wrap gap-4">
-      <a href="#projects" class="brutalist-btn bg-[#ff6b35] px-6 py-3 text-black">
+      <a href="#projects" class="btn btn--primary">
         View Projects
       </a>
 
-      <a href={hero.github} target="_blank" class="brutalist-btn bg-white px-6 py-3 text-black">
+      <a href={hero.github} target="_blank" class="btn btn--muted">
         GitHub
       </a>
 
-      <a href={hero.resume} target="_blank" class="brutalist-btn bg-[#3b82f6] px-6 py-3 text-white">
+      <a href={hero.resume} target="_blank" class="btn btn--primary">
         Resume
       </a>
     </div>
