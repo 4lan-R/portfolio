@@ -3,11 +3,39 @@
 :root {
   --bg: #f6f8fb;
   --surface: #ffffff;
+  --header-bg: #1f2937; /* header default (can be overridden by themes) */
+  --header-ink: #ffffff;
   --ink: #0f1724;
   --muted: #64748b;
   --accent: #06b6d4;
   --accent-2: #0ea5a4;
   --glass: rgba(255,255,255,0.6);
+}
+
+/* Explicit light theme (restores original warm palette) */
+[data-theme="light"] {
+  /* default light theme: neutral/white surfaces */
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --header-bg: #ffffff;
+  --header-ink: #0f1724;
+  --ink: #0f1724;
+  --muted: #64748b;
+  --accent: #06b6d4;
+  --accent-2: #0ea5a4;
+}
+
+/* Dark theme variables applied when `data-theme="dark"` is set on <html> */
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --surface: #0f1724;
+  --header-bg: #07101a;
+  --header-ink: #e6eef6;
+  --ink: #e6eef6;
+  --muted: #94a3b8;
+  --accent: #06b6d4;
+  --accent-2: #38bdf8;
+  --glass: rgba(255,255,255,0.04);
 }
 
 html {
@@ -83,6 +111,63 @@ section {
   transform: translateY(-2px);
 }
 
+/* Theme toggle button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(15,23,36,0.06);
+  color: var(--ink);
+}
+
+/* Header color that follows theme surface */
+.site-header {
+  background: var(--header-bg);
+  border-bottom: 1px solid rgba(15,23,36,0.12);
+  color: var(--header-ink, var(--ink));
+}
+
+/* Header-specific link/button colors to ensure contrast */
+.site-header .nav-link,
+.site-header .brutalist-link {
+  color: var(--header-ink, var(--ink));
+}
+.site-header .nav-link:hover,
+.site-header .brutalist-link:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--accent-2);
+}
+.site-header .theme-toggle {
+  color: var(--header-ink, var(--ink));
+  border-color: rgba(255,255,255,0.12);
+}
+
+/* Ensure header text (and children) use header ink for readability */
+.site-header,
+.site-header * {
+  color: var(--header-ink, var(--ink));
+}
+
+/* Ensure card content uses theme ink color */
+.card,
+.card * {
+  color: var(--ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    /* default to system dark if user hasn't chosen */
+    --bg: #0b1220;
+    --surface: #0f1724;
+    --ink: #e6eef6;
+    --muted: #94a3b8;
+  }
+}
+
 /* Links */
 .nav-link,
 .brutalist-link {
@@ -125,3 +210,13 @@ section {
 
 /* Utility */
 .max-width-5xl { max-width: 80rem; }
+
+/* Text utilities using theme variables */
+.text-ink { color: var(--ink); }
+.text-muted { color: var(--muted); }
+
+/* Theme-aware background / border utilities */
+.bg-ink { background: var(--ink) !important; }
+.border-ink { border-color: var(--ink) !important; }
+.bg-accent { background: var(--accent) !important; }
+.bg-accent-2 { background: var(--accent-2) !important; }

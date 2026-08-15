@@ -15,26 +15,26 @@ import { experiences } from "../data/experience";
             <h3 class="text-3xl font-black uppercase">
               {experience.company}
             </h3>
-            <p class="mt-2 font-semibold text-black/70">
+            <p class="mt-2 font-semibold text-muted">
               {experience.location}
             </p>
           </div>
 
           <div class="relative ml-3 space-y-8">
-            <div class="absolute bottom-0 left-0 top-0 w-1 bg-black"></div>
+                <div class="absolute bottom-0 left-0 top-0 w-1 bg-ink"></div>
 
             {experience.roles.map((role) => (
               <div class="relative pl-8">
-                <div class="absolute -left-[7px] top-3 h-4 w-4 border-4 border-black bg-[#ff6b35]"></div>
+                <div class="absolute -left-[7px] top-3 h-4 w-4 border-4 border-ink bg-accent"></div>
 
-                <details class="group border-2 border-black bg-white p-6 shadow-[5px_5px_0_#111]">
+                <details class="group card p-6">
                   <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
                     <div>
                       <h4 class="text-2xl font-black uppercase">
                         {role.role}
                       </h4>
-                      <p class="mt-1 font-semibold text-black/70">{role.type}</p>
-                      <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-black/60">
+                      <p class="mt-1 font-semibold text-muted">{role.type}</p>
+                      <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-muted">
                         {role.duration}
                       </p>
                     </div>
@@ -55,10 +55,10 @@ import { experiences } from "../data/experience";
                     </svg>
                   </summary>
 
-                  <ul class="mt-6 space-y-3 text-black/80">
+                  <ul class="mt-6 space-y-3 text-muted">
                     {role.points.map((point) => (
                       <li class="flex items-start gap-3">
-                        <div class="mt-2 h-2 w-2 shrink-0 bg-[#3b82f6]"></div>
+                        <div class="mt-2 h-2 w-2 shrink-0 bg-accent-2"></div>
                         <span>{point}</span>
                       </li>
                     ))}
