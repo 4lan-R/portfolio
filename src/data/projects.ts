@@ -31,7 +31,7 @@ export const projects = [
       "AI Tooling",
     ],
 
-    github: "https://github.com",
+    github: "https://github.com/4lan-R/code2prompt",
   },
 
   {
